@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="¿Quiénes somos? - Instituto EDUCA"
+  description="Conoce la historia, misión y visión del Instituto EDUCA, una asociación sin fines de lucro fundada en 1991 que promueve una educación de calidad."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">¿Quiénes somos?</h1>
+          <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+            Conoce nuestra historia, misión y el compromiso que nos mueve a transformar la educación en el Perú
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Nuestra Historia</h2>
+            <div class="space-y-6 text-gray-600 leading-relaxed">
+              <p>
+                Somos una <strong>Asociación sin fines de lucro</strong>, fundada en 1991 por educadoras y 
+                educadores que promueven una educación de calidad que nace, se enriquece y hace 
+                pertinente con participación activa de las comunidades educativas.
+              </p>
+              <p>
+                EDUCA apuesta por el trabajo articulado, integral, que atiende a la diversidad 
+                social y cultural con mirada integradora e inclusiva.
+              </p>
+              <p>
+                Durante más de 30 años, hemos trabajado incansablemente para mejorar la calidad 
+                educativa en el Perú, formando educadores comprometidos y desarrollando programas 
+                innovadores que respondan a las necesidades reales de nuestras comunidades.
+              </p>
+            </div>
+          </div>
+          <div class="relative">
+            <img
+              src="/images/about-history.jpg"
+              alt="Historia del Instituto EDUCA"
+              class="rounded-2xl shadow-2xl"
+            />
+            <div class="absolute -bottom-4 -right-4 bg-primary-500 text-white p-6 rounded-xl shadow-lg">
+              <div class="text-center">
+                <div class="text-3xl font-bold">30+</div>
+                <div class="text-sm">Años de experiencia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Misión y Visión</h2>
+          <p class="text-xl text-gray-600">Los principios que guían nuestro trabajo</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Mission -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Misión</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Promover una educación de calidad que nace, se enriquece y hace pertinente con 
+              participación activa de las comunidades educativas, apostando por el trabajo 
+              articulado, integral, que atiende a la diversidad social y cultural con mirada 
+              integradora e inclusiva.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Visión</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Ser una institución líder en la promoción de una educación de calidad, 
+              reconocida por su compromiso con la transformación educativa y el desarrollo 
+              integral de las comunidades, contribuyendo a la construcción de una sociedad 
+              más justa, inclusiva y equitativa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestros Valores</h2>
+          <p class="text-xl text-gray-600">Los principios que orientan nuestro actuar</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Compromiso</h3>
+            <p class="text-gray-600">Con la educación de calidad y el desarrollo integral</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Inclusión</h3>
+            <p class="text-gray-600">Atendiendo a la diversidad social y cultural</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Participación</h3>
+            <p class="text-gray-600">Activa de las comunidades educativas</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z"/>
+                <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z"/>
+                <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Excelencia</h3>
+            <p class="text-gray-600">En la calidad de nuestros programas y servicios</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestro Equipo</h2>
+          <p class="text-xl text-gray-600">Profesionales comprometidos con la educación</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Team members would go here -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+            <div class="w-24 h-24 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-white font-bold text-2xl">ED</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Equipo Directivo</h3>
+            <p class="text-gray-600 mb-4">Liderazgo estratégico y visión educativa</p>
+            <p class="text-gray-500 text-sm">
+              Profesionales con amplia experiencia en gestión educativa y desarrollo social
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+            <div class="w-24 h-24 bg-gradient-to-br from-secondary-400 to-accent-400 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-white font-bold text-2xl">PE</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Equipo Pedagógico</h3>
+            <p class="text-gray-600 mb-4">Especialistas en educación y capacitación</p>
+            <p class="text-gray-500 text-sm">
+              Educadores experimentados en metodologías innovadoras y desarrollo curricular
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+            <div class="w-24 h-24 bg-gradient-to-br from-accent-400 to-primary-400 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-white font-bold text-2xl">AD</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Equipo Administrativo</h3>
+            <p class="text-gray-600 mb-4">Soporte operacional y gestión de recursos</p>
+            <p class="text-gray-500 text-sm">
+              Profesionales dedicados a la gestión eficiente y transparente de la organización
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

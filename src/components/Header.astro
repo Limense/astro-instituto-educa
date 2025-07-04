@@ -1,0 +1,107 @@
+---
+const navItems = [
+  { href: '/', label: 'Inicio' },
+  { href: '/quienes-somos', label: '¿Quiénes somos?' },
+  { href: '/que-hacemos', label: '¿Qué hacemos?' },
+  { href: '/noticias', label: 'Noticias' },
+  { href: '/contactanos', label: 'Contáctanos' },
+  { href: '/donar', label: 'Donar', highlight: true },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="flex items-center space-x-3">
+          <img
+            src="/images/logo-educa.png"
+            alt="Instituto EDUCA"
+            class="h-12 w-auto"
+          />
+          <div class="hidden sm:block">
+            <h1 class="text-xl font-bold text-gray-900">Instituto EDUCA</h1>
+            <p class="text-sm text-gray-600">Educación de calidad</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+              currentPath === item.href
+                ? 'bg-primary-500 text-white'
+                : item.highlight
+                ? 'bg-accent-500 text-white hover:bg-accent-600'
+                : 'text-gray-700 hover:text-primary-500 hover:bg-gray-100'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          id="mobile-menu-button"
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Abrir menú principal</span>
+          <!-- Hamburger icon -->
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="md:hidden hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+            currentPath === item.href
+              ? 'bg-primary-500 text-white'
+              : item.highlight
+              ? 'bg-accent-500 text-white hover:bg-accent-600'
+              : 'text-gray-700 hover:text-primary-500 hover:bg-gray-100'
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isOpen = mobileMenu.classList.contains('hidden');
+        
+        if (isOpen) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'true');
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+</script>

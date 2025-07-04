@@ -1,0 +1,11 @@
+# Dependencias para el proyecto
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Construir para producción
+npm run build
+
+# Previsualizar build de producción
+npm run preview

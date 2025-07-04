@@ -1,0 +1,107 @@
+---
+const testimonials = [
+  {
+    name: "Carmen Hortencia Najarro Febres",
+    role: "Educadora",
+    content: "Mi agradecimiento eterno al Instituto EDUCA, son parte de mi vida profesional desde el año 1999, una familia que me permitió crecer, preparándome a través de talleres que luego hice réplica en diversos contextos en el distrito de San Juan de Lurigancho, Callao, Huancavelica, UGEL 05 y UGEL 06 en mi desempeño laboral.",
+    image: "/images/testimonial-1.jpg"
+  },
+  {
+    name: "Roque Blas Del Villar Gálvez",
+    role: "Director de I.E.",
+    content: "Educa, a través de sus talleres de capacitación, me impulsó a desplegar la responsabilidad social en mi desempeño dentro y fuera de la escuela desde la reflexión de la práctica pedagógica, a trabajar en equipo con los dirigentes de la comunidad y en redes educativas para atender las demandas del contexto local.",
+    image: "/images/testimonial-2.jpg"
+  },
+  {
+    name: "Astrid Mendoza Mejía",
+    role: "Maestra",
+    content: "A lo largo de los años dedicados a la educación, he invertido con más fuerza, mis capacidades y competencias en el sector público; habiendo recibido el aporte sostenido durante varios años del Instituto EDUCA a través de talleres y cursos de capacitación en liderazgo, habilidades sociales con énfasis en manejo pedagógico.",
+    image: "/images/testimonial-3.jpg"
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Testimonios
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Escucha las experiencias de educadores que han sido parte de nuestros programas 
+        y cómo han transformado sus prácticas educativas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+          style={`animation-delay: ${index * 0.2}s`}
+        >
+          <!-- Quote icon -->
+          <div class="flex justify-center mb-6">
+            <svg class="w-12 h-12 text-primary-200 group-hover:text-primary-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+            </svg>
+          </div>
+
+          <!-- Testimonial content -->
+          <blockquote class="text-gray-700 text-center mb-6 italic leading-relaxed">
+            "{testimonial.content}"
+          </blockquote>
+
+          <!-- Author info -->
+          <div class="flex flex-col items-center">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center mb-4 shadow-lg">
+              <span class="text-white font-bold text-lg">
+                {testimonial.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+              </span>
+            </div>
+            <h4 class="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
+            <p class="text-gray-500 text-sm">{testimonial.role}</p>
+          </div>
+
+          <!-- Decorative elements -->
+          <div class="absolute top-4 right-4 w-4 h-4 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+          <div class="absolute bottom-4 left-4 w-3 h-3 bg-gradient-to-br from-accent-400 to-primary-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Navigation dots for mobile carousel -->
+    <div class="flex justify-center mt-8 space-x-2 lg:hidden">
+      {testimonials.map((_, index) => (
+        <button 
+          class={`w-3 h-3 rounded-full transition-colors duration-200 ${index === 0 ? 'bg-primary-500' : 'bg-gray-300'}`}
+          data-testimonial-index={index}
+        >
+          <span class="sr-only">Testimonio {index + 1}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ef4444, #3b82f6, #f97316);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .testimonial-card:hover::before {
+    transform: translateX(0);
+  }
+</style>

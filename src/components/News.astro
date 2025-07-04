@@ -1,0 +1,130 @@
+---
+const news = [
+  {
+    title: "#UnaSolaFuerza por la infancia y la niñez",
+    date: "26 SEP 2023",
+    excerpt: "Iniciativa que busca unir esfuerzos para proteger y garantizar los derechos de la infancia y adolescencia en nuestro país.",
+    image: "/images/news-1.jpg",
+    category: "Campañas",
+    slug: "una-sola-fuerza-infancia-ninez"
+  },
+  {
+    title: "Felices Fiestas Patrias 2023",
+    date: "27 JUL 2023",
+    excerpt: "Celebramos las fiestas patrias recordando nuestro compromiso con la educación y el desarrollo de nuestro país.",
+    image: "/images/news-2.jpg",
+    category: "Eventos",
+    slug: "felices-fiestas-patrias-2023"
+  },
+  {
+    title: "Firma de Convenio EDUCA-COFACO Industries SAC",
+    date: "22 AGO 2023",
+    excerpt: "Alianza estratégica que fortalece nuestros programas educativos a través de la colaboración público-privada.",
+    image: "/images/news-3.jpg",
+    category: "Alianzas",
+    slug: "convenio-educa-cofaco"
+  }
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Noticias
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Mantente informado sobre nuestras actividades, logros y eventos que marcan 
+        la diferencia en la educación peruana.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {news.map((article, index) => (
+        <article 
+          class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+          style={`animation-delay: ${index * 0.2}s`}
+        >
+          <!-- Image -->
+          <div class="relative overflow-hidden">
+            <img
+              src={article.image}
+              alt={article.title}
+              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute top-4 left-4">
+              <span class="inline-block bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                {article.category}
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <div class="flex items-center text-gray-500 text-sm mb-3">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/>
+                <path d="M5 3v4h14V3h2a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V4a1 1 0 011-1h2z"/>
+              </svg>
+              {article.date}
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+              {article.title}
+            </h3>
+
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              {article.excerpt}
+            </p>
+
+            <a 
+              href={`/noticias/${article.slug}`}
+              class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors duration-200"
+            >
+              Leer más
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="h-1 bg-gray-200">
+            <div class="h-full bg-gradient-to-r from-primary-500 to-secondary-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- View all news button -->
+    <div class="text-center mt-12">
+      <a
+        href="/noticias"
+        class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200 shadow-lg"
+      >
+        Ver todas las noticias
+        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  article {
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+</style>

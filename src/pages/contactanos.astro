@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Contáctanos - Instituto EDUCA"
+  description="Ponte en contacto con el Instituto EDUCA. Encuentra nuestra información de contacto, ubicación y formulario para consultas."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Contáctanos</h1>
+          <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+            Estamos aquí para ayudarte. Ponte en contacto con nosotros para cualquier consulta o información adicional
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Phone -->
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Teléfono</h3>
+            <p class="text-gray-600">920 379 149</p>
+            <p class="text-gray-600">01 639 3870</p>
+          </div>
+
+          <!-- Email -->
+          <div class="text-center">
+            <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3>
+            <p class="text-gray-600">informes@educa.org.pe</p>
+            <p class="text-gray-600">@Instituto.Educa</p>
+          </div>
+
+          <!-- Address -->
+          <div class="text-center">
+            <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Dirección</h3>
+            <p class="text-gray-600">Av. Aguarico 1015</p>
+            <p class="text-gray-600">Breña, Lima</p>
+          </div>
+        </div>
+
+        <!-- Contact Form and Map -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Envíanos un mensaje</h2>
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                    Nombre *
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                    Apellido *
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                  Correo electrónico *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                />
+              </div>
+
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                  Asunto *
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                >
+                  <option value="">Selecciona un tema</option>
+                  <option value="informacion-programas">Información sobre programas</option>
+                  <option value="voluntariado">Voluntariado</option>
+                  <option value="donaciones">Donaciones</option>
+                  <option value="alianzas">Alianzas estratégicas</option>
+                  <option value="capacitacion">Capacitación docente</option>
+                  <option value="prensa">Prensa y comunicaciones</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                  Mensaje *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                  placeholder="Escribe tu mensaje aquí..."
+                ></textarea>
+              </div>
+
+              <div class="flex items-start">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                  class="mt-1 h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                />
+                <label for="privacy" class="ml-3 text-sm text-gray-600">
+                  Acepto la <a href="#" class="text-primary-600 hover:text-primary-700">política de privacidad</a> 
+                  y el tratamiento de mis datos personales *
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              >
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+
+          <!-- Map and Office Hours -->
+          <div class="space-y-8">
+            <!-- Map -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Nuestra ubicación</h3>
+              <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+                <div class="text-center text-gray-500">
+                  <svg class="w-12 h-12 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                  </svg>
+                  <p>Mapa de Google</p>
+                  <p class="text-sm">Av. Aguarico 1015, Breña, Lima</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Office Hours -->
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Horarios de atención</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Lunes - Viernes</span>
+                  <span class="font-medium">8:00 AM - 6:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Sábados</span>
+                  <span class="font-medium">9:00 AM - 1:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Domingos</span>
+                  <span class="font-medium">Cerrado</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Síguenos en redes sociales</h3>
+              <div class="flex space-x-4">
+                <a
+                  href="https://www.facebook.com/insteduca/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors duration-200"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a
+                  href="mailto:informes@educa.org.pe"
+                  class="w-10 h-10 bg-secondary-600 text-white rounded-full flex items-center justify-center hover:bg-secondary-700 transition-colors duration-200"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                    <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://wa.me/51920379149"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 bg-accent-600 text-white rounded-full flex items-center justify-center hover:bg-accent-700 transition-colors duration-200"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Preguntas frecuentes</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg shadow-sm">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+              <span class="font-medium text-gray-900">¿Cómo puedo participar en sus programas?</span>
+              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="px-6 pb-4 text-gray-600">
+              Puedes contactarnos a través de nuestro formulario o llamarnos directamente. Evaluaremos tu perfil y te informaremos sobre las oportunidades disponibles.
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-sm">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+              <span class="font-medium text-gray-900">¿Ofrecen certificaciones?</span>
+              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="px-6 pb-4 text-gray-600">
+              Sí, otorgamos certificados de participación y especialización en nuestros programas de capacitación docente.
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-sm">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+              <span class="font-medium text-gray-900">¿Cómo puedo hacer una donación?</span>
+              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="px-6 pb-4 text-gray-600">
+              Puedes donar a través de nuestra página de donaciones, por transferencia bancaria o visitando nuestras oficinas. Contáctanos para más información.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // Form submission handling
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form') as HTMLFormElement;
+    
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic form validation
+        const formData = new FormData(form);
+        const requiredFields = ['firstName', 'lastName', 'email', 'subject', 'message'];
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+          if (!formData.get(field)) {
+            isValid = false;
+          }
+        });
+        
+        if (!formData.get('privacy')) {
+          isValid = false;
+        }
+        
+        if (isValid) {
+          // Here you would typically send the data to your server
+          alert('Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.');
+          form.reset();
+        } else {
+          alert('Por favor, completa todos los campos obligatorios.');
+        }
+      });
+    }
+    
+    // FAQ accordion functionality
+    const faqButtons = document.querySelectorAll('button[class*="w-full px-6 py-4"]');
+    faqButtons.forEach(button => {
+      button.addEventListener('click', function(this: HTMLButtonElement) {
+        const content = this.nextElementSibling as HTMLElement;
+        const icon = this.querySelector('svg') as SVGElement;
+        
+        if (content && icon) {
+          if (content.style.display === 'none' || !content.style.display) {
+            content.style.display = 'block';
+            icon.style.transform = 'rotate(180deg)';
+          } else {
+            content.style.display = 'none';
+            icon.style.transform = 'rotate(0deg)';
+          }
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,111 @@
+---
+const actionLines = [
+  {
+    title: "Educación y Salud Integral",
+    description: "Promovemos una educación que integra aspectos de salud física, mental y social para el desarrollo integral de las personas.",
+    icon: "health",
+    color: "primary"
+  },
+  {
+    title: "Educación y Cultura de Paz",
+    description: "Fomentamos valores de tolerancia, respeto y convivencia pacífica a través de programas educativos especializados.",
+    icon: "peace",
+    color: "secondary"
+  },
+  {
+    title: "Educación y Producción",
+    description: "Desarrollamos capacidades productivas y emprendedoras en las comunidades educativas para generar oportunidades de desarrollo.",
+    icon: "production",
+    color: "accent"
+  },
+  {
+    title: "Educación y Desarrollo Juvenil",
+    description: "Acompañamos a jóvenes en su proceso formativo, fortaleciendo sus habilidades y competencias para el futuro.",
+    icon: "youth",
+    color: "primary"
+  }
+];
+
+const iconMap = {
+  health: `<path d="M21 10.5h.5c0-.401-.223-.767-.577-.951L12.923.549c-.346-.184-.5-.56-.5-.549 0-.401-.223-.767-.577-.951C11.662-.134 11.338-.134 11.154.049L3.077 9.549C2.723 9.733 2.5 10.099 2.5 10.5H3v8a3 3 0 003 3h12a3 3 0 003-3v-8z"/>`,
+  peace: `<path d="M21 8a13 13 0 11-26 0 13 13 0 0126 0z M8 8a5 5 0 1010 0 5 5 0 00-10 0z"/>`,
+  production: `<path d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>`,
+  youth: `<path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>`
+};
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Líneas de Acción Educativa
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Desarrollamos programas integrales que abordan las necesidades específicas 
+        de cada comunidad educativa con enfoque inclusivo y participativo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {actionLines.map((line, index) => (
+        <div 
+          class={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group`}
+          style={`animation-delay: ${index * 0.2}s`}
+        >
+          <div class={`w-16 h-16 rounded-full bg-${line.color}-100 flex items-center justify-center mb-6 group-hover:bg-${line.color}-200 transition-colors duration-300`}>
+            <svg class={`w-8 h-8 text-${line.color}-600`} fill="currentColor" viewBox="0 0 24 24">
+              <Fragment set:html={iconMap[line.icon]} />
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
+            {line.title}
+          </h3>
+          
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            {line.description}
+          </p>
+          
+          <a 
+            href="/que-hacemos" 
+            class={`inline-flex items-center text-${line.color}-600 font-semibold hover:text-${line.color}-700 transition-colors duration-200`}
+          >
+            Conocer más
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="/que-hacemos"
+        class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200 shadow-lg"
+      >
+        Ver todos los programas
+        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-in-up {
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+</style>

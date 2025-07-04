@@ -1,0 +1,321 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const programs = [
+  {
+    title: "Educación y Salud Integral",
+    description: "Programas que integran la promoción de la salud física, mental y social en el proceso educativo, desarrollando hábitos saludables y competencias para el bienestar integral.",
+    image: "/images/program-health.jpg",
+    activities: [
+      "Capacitación en educación sexual integral",
+      "Programas de nutrición y alimentación saludable",
+      "Promoción de la salud mental y emocional",
+      "Prevención de adicciones y conductas de riesgo"
+    ],
+    beneficiaries: "500+ estudiantes",
+    duration: "Permanente"
+  },
+  {
+    title: "Educación y Cultura de Paz",
+    description: "Iniciativas que promueven la convivencia pacífica, el respeto a los derechos humanos y la resolución no violenta de conflictos en el ámbito educativo.",
+    image: "/images/program-peace.jpg",
+    activities: [
+      "Talleres de resolución de conflictos",
+      "Formación en derechos humanos",
+      "Programas de mediación escolar",
+      "Educación para la ciudadanía democrática"
+    ],
+    beneficiaries: "300+ educadores",
+    duration: "Anual"
+  },
+  {
+    title: "Educación y Producción",
+    description: "Programas que vinculan la educación con actividades productivas, desarrollando competencias emprendedoras y generando oportunidades de desarrollo económico local.",
+    image: "/images/program-production.jpg",
+    activities: [
+      "Formación en emprendimiento juvenil",
+      "Desarrollo de proyectos productivos",
+      "Capacitación técnica y vocacional",
+      "Articulación con el sector productivo"
+    ],
+    beneficiaries: "250+ jóvenes",
+    duration: "6 meses"
+  },
+  {
+    title: "Educación y Desarrollo Juvenil",
+    description: "Programas especializados en el acompañamiento de jóvenes, fortaleciendo sus habilidades sociales, liderazgo y participación ciudadana.",
+    image: "/images/program-youth.jpg",
+    activities: [
+      "Talleres de liderazgo juvenil",
+      "Programas de participación ciudadana",
+      "Desarrollo de habilidades sociales",
+      "Orientación vocacional y profesional"
+    ],
+    beneficiaries: "400+ jóvenes",
+    duration: "Anual"
+  }
+];
+
+const methodology = [
+  {
+    title: "Diagnóstico Participativo",
+    description: "Identificamos las necesidades y potencialidades de cada comunidad educativa a través de metodologías participativas.",
+    icon: "search"
+  },
+  {
+    title: "Planificación Colaborativa",
+    description: "Diseñamos estrategias de intervención en conjunto con la comunidad educativa, respetando su contexto y cultura.",
+    icon: "plan"
+  },
+  {
+    title: "Implementación Integral",
+    description: "Ejecutamos las acciones de manera integral, articulando diferentes actores y recursos disponibles.",
+    icon: "implement"
+  },
+  {
+    title: "Monitoreo y Evaluación",
+    description: "Realizamos seguimiento continuo y evaluación de impacto para asegurar la calidad y efectividad de nuestras intervenciones.",
+    icon: "evaluate"
+  }
+];
+---
+
+<Layout 
+  title="¿Qué hacemos? - Instituto EDUCA"
+  description="Conoce los programas y líneas de acción del Instituto EDUCA: Educación y Salud Integral, Cultura de Paz, Producción y Desarrollo Juvenil."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">¿Qué hacemos?</h1>
+          <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+            Desarrollamos programas integrales que transforman la educación a través de cuatro líneas de acción estratégicas
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Overview -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestros Programas</h2>
+          <p class="text-xl text-gray-600">Líneas de acción que transforman la educación</p>
+        </div>
+
+        <div class="space-y-16">
+          {programs.map((program, index) => (
+            <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div class={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div class="relative">
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    class="rounded-2xl shadow-2xl w-full h-64 object-cover"
+                  />
+                  <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
+                    <div class="flex items-center space-x-4">
+                      <div class="text-center">
+                        <div class="text-lg font-bold text-primary-600">{program.beneficiaries}</div>
+                        <div class="text-xs text-gray-600">Beneficiarios</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="text-lg font-bold text-secondary-600">{program.duration}</div>
+                        <div class="text-xs text-gray-600">Duración</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class={index % 2 === 1 ? 'lg:col-start-1' : ''}>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">{program.description}</p>
+                
+                <h4 class="text-lg font-semibold text-gray-900 mb-4">Principales actividades:</h4>
+                <ul class="space-y-2 mb-6">
+                  {program.activities.map((activity) => (
+                    <li class="flex items-start space-x-3">
+                      <svg class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <span class="text-gray-600">{activity}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <button class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                  Conocer más detalles
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra Metodología</h2>
+          <p class="text-xl text-gray-600">Un enfoque integral y participativo</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {methodology.map((step, index) => (
+            <div class="text-center relative">
+              <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                  {step.icon === 'search' && (
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                  )}
+                  {step.icon === 'plan' && (
+                    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                  )}
+                  {step.icon === 'implement' && (
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  )}
+                  {step.icon === 'evaluate' && (
+                    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  )}
+                </svg>
+                <div class="absolute -top-2 -right-2 w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                  {index + 1}
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
+              <p class="text-gray-600">{step.description}</p>
+              
+              {index < methodology.length - 1 && (
+                <div class="hidden lg:block absolute top-10 left-full w-full">
+                  <svg class="w-full h-2 text-gray-300" fill="currentColor" viewBox="0 0 100 2">
+                    <rect width="100" height="2" />
+                  </svg>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact & Results -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestro Impacto</h2>
+          <p class="text-xl text-gray-600">Resultados que transforman vidas</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary-600 mb-2">1,500+</div>
+            <div class="text-gray-600">Beneficiarios directos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-secondary-600 mb-2">50+</div>
+            <div class="text-gray-600">Centros educativos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-accent-600 mb-2">200+</div>
+            <div class="text-gray-600">Docentes capacitados</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary-600 mb-2">25+</div>
+            <div class="text-gray-600">Comunidades</div>
+          </div>
+        </div>
+
+        <div class="mt-16 bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Logros Destacados</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Mejora en indicadores educativos</h4>
+                <p class="text-gray-600 text-sm">85% de las escuelas participantes mejoraron sus resultados de aprendizaje</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-secondary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Fortalecimiento docente</h4>
+                <p class="text-gray-600 text-sm">90% de docentes reportan mayor confianza en sus prácticas pedagógicas</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Participación comunitaria</h4>
+                <p class="text-gray-600 text-sm">75% de las familias participan activamente en los procesos educativos</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Sostenibilidad</h4>
+                <p class="text-gray-600 text-sm">80% de las iniciativas continúan funcionando después de nuestra intervención</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-br from-primary-600 to-secondary-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">¿Quieres ser parte del cambio?</h2>
+        <p class="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
+          Únete a nuestros programas o apoya nuestras iniciativas para transformar la educación
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contactanos"
+            class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+          >
+            Contactar
+            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a
+            href="/donar"
+            class="inline-flex items-center justify-center px-8 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors duration-200 shadow-lg"
+          >
+            Donar
+            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

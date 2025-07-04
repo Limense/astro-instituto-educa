@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const featuredNews = [
+  {
+    title: "#UnaSolaFuerza por la infancia y la niñez",
+    date: "26 SEP 2023",
+    excerpt: "Iniciativa que busca unir esfuerzos para proteger y garantizar los derechos de la infancia y adolescencia en nuestro país.",
+    content: "Una iniciativa importante que busca proteger los derechos de la infancia...",
+    image: "/images/news-1.jpg",
+    category: "Campañas",
+    featured: true
+  },
+  {
+    title: "Felices Fiestas Patrias 2023",
+    date: "27 JUL 2023",
+    excerpt: "Celebramos las fiestas patrias recordando nuestro compromiso con la educación y el desarrollo de nuestro país.",
+    content: "En estas fechas especiales celebramos nuestro compromiso...",
+    image: "/images/news-2.jpg",
+    category: "Eventos",
+    featured: false
+  },
+  {
+    title: "Firma de Convenio EDUCA-COFACO Industries SAC",
+    date: "22 AGO 2023",
+    excerpt: "Alianza estratégica que fortalece nuestros programas educativos a través de la colaboración público-privada.",
+    content: "Una alianza estratégica que nos permite fortalecer...",
+    image: "/images/news-3.jpg",
+    category: "Alianzas",
+    featured: false
+  },
+  {
+    title: "Taller de Capacitación Docente en Metodologías Activas",
+    date: "15 JUN 2023",
+    excerpt: "Más de 100 docentes participaron en nuestro taller sobre metodologías activas de enseñanza.",
+    content: "El taller reunió a educadores de diferentes regiones...",
+    image: "/images/news-4.jpg",
+    category: "Capacitación",
+    featured: false
+  },
+  {
+    title: "Inauguración del Programa de Educación y Salud",
+    date: "10 MAY 2023",
+    excerpt: "Lanzamos oficialmente nuestro nuevo programa integral de educación y salud en 5 comunidades.",
+    content: "Con gran éxito inauguramos este programa...",
+    image: "/images/news-5.jpg",
+    category: "Programas",
+    featured: false
+  }
+];
+
+const categories = ["Todas", "Programas", "Capacitación", "Alianzas", "Eventos", "Campañas"];
+---
+
+<Layout 
+  title="Noticias - Instituto EDUCA"
+  description="Mantente informado sobre las últimas noticias, eventos y logros del Instituto EDUCA en la transformación de la educación peruana."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Noticias</h1>
+          <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+            Mantente informado sobre nuestras actividades, logros y eventos que marcan la diferencia en la educación peruana
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured News -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Noticia Destacada</h2>
+        
+        {featuredNews.filter(news => news.featured).map((article) => (
+          <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div class="md:flex">
+              <div class="md:w-1/2">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  class="w-full h-64 md:h-full object-cover"
+                />
+              </div>
+              <div class="md:w-1/2 p-8 md:p-12">
+                <div class="flex items-center mb-4">
+                  <span class="inline-block bg-primary-100 text-primary-600 px-3 py-1 rounded-full text-sm font-medium mr-4">
+                    {article.category}
+                  </span>
+                  <span class="text-gray-500 text-sm">{article.date}</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  {article.title}
+                </h3>
+                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                  {article.excerpt}
+                </p>
+                <button class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200">
+                  Leer artículo completo
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- News Categories -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Todas las Noticias</h2>
+        
+        <!-- Category Filter -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
+            <button 
+              class={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
+                category === "Todas" 
+                  ? "bg-primary-600 text-white" 
+                  : "bg-white text-gray-700 hover:bg-gray-100"
+              }`}
+              data-category={category}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <!-- News Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredNews.filter(news => !news.featured).map((article) => (
+            <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div class="relative">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  class="w-full h-48 object-cover"
+                />
+                <div class="absolute top-4 left-4">
+                  <span class="inline-block bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {article.category}
+                  </span>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <div class="flex items-center text-gray-500 text-sm mb-3">
+                  <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/>
+                    <path d="M5 3v4h14V3h2a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V4a1 1 0 011-1h2z"/>
+                  </svg>
+                  {article.date}
+                </div>
+                
+                <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors duration-200">
+                  {article.title}
+                </h3>
+                
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                  {article.excerpt}
+                </p>
+                
+                <button class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors duration-200">
+                  Leer más
+                  <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-12">
+          <button class="inline-flex items-center px-8 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200">
+            Cargar más noticias
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="py-20 bg-primary-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Suscríbete a nuestro boletín</h2>
+        <p class="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
+          Recibe las últimas noticias y actualizaciones directamente en tu correo electrónico
+        </p>
+        
+        <form class="max-w-md mx-auto">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input
+              type="email"
+              placeholder="Tu correo electrónico"
+              class="flex-1 px-4 py-3 bg-white text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 placeholder-gray-500"
+              required
+            />
+            <button
+              type="submit"
+              class="px-8 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors duration-200"
+            >
+              Suscribirse
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // Category filter functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const categoryButtons = document.querySelectorAll('[data-category]');
+    const articles = document.querySelectorAll('article');
+    
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.dataset.category;
+        
+        // Update button states
+        categoryButtons.forEach(btn => {
+          btn.classList.remove('bg-primary-600', 'text-white');
+          btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+        });
+        
+        this.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+        this.classList.add('bg-primary-600', 'text-white');
+        
+        // Filter articles (simplified - in real implementation would filter based on data attributes)
+        // For now, just show all articles
+        articles.forEach(article => {
+          article.style.display = 'block';
+        });
+      });
+    });
+  });
+</script>
