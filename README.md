@@ -103,24 +103,31 @@ Sitio web moderno y responsive para el Instituto EDUCA, desarrollado con Astro, 
 
 ## 🖼️ Recursos Multimedia
 
-### Imágenes Requeridas
+### Imágenes Creadas ✅
+Las siguientes imágenes placeholder están disponibles y funcionando:
 ```
 /public/images/
-├── logo-educa.png              # Logo principal
-├── logo-educa-white.png        # Logo en blanco
+├── logo-educa.svg              # Logo principal (nuevo diseño)
+├── logo-educa-white.svg        # Logo para fondos oscuros
 ├── hero-education.jpg          # Imagen principal del hero
-├── about-history.jpg           # Historia de la institución
-├── program-health.jpg          # Programa de salud
-├── program-peace.jpg           # Programa de paz
-├── program-production.jpg      # Programa de producción
-├── program-youth.jpg           # Programa juvenil
-├── testimonial-1.jpg           # Testimonios
-├── testimonial-2.jpg
-├── testimonial-3.jpg
-├── news-1.jpg                  # Noticias
-├── news-2.jpg
-├── news-3.jpg
-└── qr-donation.png             # QR para donaciones
+├── about-history.svg           # Historia de la institución
+├── program-health.svg          # Programa de salud
+├── program-peace.svg           # Programa de paz
+├── program-production.svg      # Programa de producción
+├── program-youth.svg           # Programa juvenil
+├── testimonial-1.svg           # Testimonios
+├── testimonial-2.svg
+├── testimonial-3.svg
+├── news-1.svg                  # Noticias
+├── news-2.svg
+├── news-3.svg
+└── qr-donation.svg             # QR para donaciones
+```
+
+### Cómo Regenerar Imágenes Placeholder
+```bash
+# Ejecutar el script para generar todas las imágenes SVG
+node generate-placeholders.js
 ```
 
 ### Iconos

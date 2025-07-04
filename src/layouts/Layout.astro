@@ -5,7 +5,7 @@ export interface Props {
   image?: string;
 }
 
-const { title, description = "Instituto EDUCA - Educación de calidad para todos", image = "/images/logo-educa.png" } = Astro.props;
+const { title, description = "Instituto EDUCA - Educación de calidad para todos", image = "/images/logo-educa.svg" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ const { title, description = "Instituto EDUCA - Educación de calidad para todos
       "@type": "Organization",
       "name": "Instituto EDUCA",
       "url": "https://educa.org.pe",
-      "logo": "https://educa.org.pe/images/logo-educa.png",
+      "logo": "https://educa.org.pe/images/logo-educa.svg",
       "description": "Asociación sin fines de lucro fundada en 1991 que promueve una educación de calidad",
       "address": {
         "@type": "PostalAddress",
@@ -66,5 +66,8 @@ const { title, description = "Instituto EDUCA - Educación de calidad para todos
 </head>
 <body class="min-h-screen bg-white font-sans antialiased">
   <slot />
+  
+  <!-- Main JavaScript -->
+  <script src="/js/main.js" is:inline></script>
 </body>
 </html>
