@@ -215,47 +215,6 @@ npm run astro        # CLI de Astro
 - Lazy loading de imágenes
 - CSS y JS minificados
 
-## 🌐 Despliegue
-
-### Opciones de Hosting
-- **Netlify**: Recomendado para sitios estáticos
-- **Vercel**: Excelente para proyectos Astro
-- **GitHub Pages**: Opción gratuita
-- **Servidor propio**: Con Node.js
-
-### Variables de Entorno
-```env
-SITE_URL=https://educa.org.pe
-CONTACT_EMAIL=informes@educa.org.pe
-```
-
-## 📝 Contenido
-
-### Textos Principales
-- Todos los textos están en español
-- Contenido basado en el sitio web actual
-- Enfoque en beneficiarios y impacto social
-- Llamadas a la acción claras
-
-### Actualizaciones de Contenido
-- Noticias: Actualización mensual
-- Programas: Revisión semestral
-- Testimonios: Actualización trimestral
-- Información de contacto: Según necesidad
-
-## 🤝 Contribuir
-
-1. Fork del proyecto
-2. Crear rama de feature
-3. Commits con mensajes descriptivos
-4. Pruebas antes de enviar PR
-5. Documentar cambios significativos
-
-## 📞 Contacto
-
-- **Email**: informes@educa.org.pe
-- **Teléfono**: 920 379 149
-- **Dirección**: Av. Aguarico 1015, Breña, Lima
 
 ## 📄 Licencia
 
