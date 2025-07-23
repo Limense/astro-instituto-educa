@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.astro/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# IDE (cada desarrollador tiene sus preferencias)
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime data
+*.pid
+*.seed
+
+# Coverage
+coverage/
+
+# Optional npm cache
+.npm
+.eslintcache

@@ -1,53 +1,20 @@
-# Comandos Útiles para Instituto EDUCA
+# Comandos Instituto EDUCA
 
-## Desarrollo Local
-
-### Iniciar servidor de desarrollo
+## Desarrollo
 ```bash
-npm run dev
-```
-Abre: http://localhost:4322
-
-### Construir para producción
-```bash
-npm run build
+npm install          # Instalar dependencias
+npm run dev          # Servidor desarrollo (localhost:4322)
+npm run build        # Construir para producción
+npm run preview      # Previsualizar build
 ```
 
-### Previsualizar build de producción
-```bash
-npm run preview
-```
-
-## Imágenes
-
-### Generar imágenes placeholder
-```bash
-node generate-placeholders.js
-```
-
-## Mantenimiento
-
-### Instalar dependencias
-```bash
-npm install
-```
-
-### Limpiar caché
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
-## Páginas Disponibles
-
-- `/` - Página de inicio
+## Páginas
+- `/` - Inicio
 - `/quienes-somos` - ¿Quiénes somos?
 - `/que-hacemos` - ¿Qué hacemos?
 - `/noticias` - Noticias
-- `/contactanos` - Contáctanos
-- `/donar` - Donar
-
-## Estructura de Archivos
+- `/contactanos` - Contacto
+- `/donar` - Donaciones
 
 ```
 /

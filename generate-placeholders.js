@@ -15,22 +15,20 @@ function generateSVGPlaceholder(width, height, text, bgColor = '#ef4444', textCo
 
 // Configuración de imágenes
 const images = [
-  { name: 'logo-educa-white.png', width: 300, height: 120, text: 'EDUCA LOGO', bg: '#ffffff', color: '#ef4444' },
-  { name: 'about-history.jpg', width: 800, height: 600, text: 'Historia EDUCA', bg: '#3b82f6', color: '#ffffff' },
-  { name: 'program-health.jpg', width: 400, height: 300, text: 'Salud', bg: '#10b981', color: '#ffffff' },
-  { name: 'program-peace.jpg', width: 400, height: 300, text: 'Paz', bg: '#8b5cf6', color: '#ffffff' },
-  { name: 'program-production.jpg', width: 400, height: 300, text: 'Producción', bg: '#f59e0b', color: '#ffffff' },
-  { name: 'program-youth.jpg', width: 400, height: 300, text: 'Juventud', bg: '#ef4444', color: '#ffffff' },
-  { name: 'testimonial-1.jpg', width: 300, height: 300, text: 'Testimonio 1', bg: '#6b7280', color: '#ffffff' },
-  { name: 'testimonial-2.jpg', width: 300, height: 300, text: 'Testimonio 2', bg: '#6b7280', color: '#ffffff' },
-  { name: 'testimonial-3.jpg', width: 300, height: 300, text: 'Testimonio 3', bg: '#6b7280', color: '#ffffff' },
-  { name: 'news-1.jpg', width: 400, height: 250, text: 'Noticia 1', bg: '#dc2626', color: '#ffffff' },
-  { name: 'news-2.jpg', width: 400, height: 250, text: 'Noticia 2', bg: '#dc2626', color: '#ffffff' },
-  { name: 'news-3.jpg', width: 400, height: 250, text: 'Noticia 3', bg: '#dc2626', color: '#ffffff' },
-  { name: 'qr-donation.png', width: 200, height: 200, text: 'QR Donación', bg: '#000000', color: '#ffffff' }
+  { name: 'about-history.svg', width: 800, height: 600, text: 'Historia EDUCA', bg: '#3b82f6' },
+  { name: 'program-health.svg', width: 400, height: 300, text: 'Salud', bg: '#10b981' },
+  { name: 'program-peace.svg', width: 400, height: 300, text: 'Paz', bg: '#8b5cf6' },
+  { name: 'program-production.svg', width: 400, height: 300, text: 'Producción', bg: '#f59e0b' },
+  { name: 'program-youth.svg', width: 400, height: 300, text: 'Juventud', bg: '#ef4444' },
+  { name: 'testimonial-1.svg', width: 300, height: 300, text: 'Testimonio 1', bg: '#6b7280' },
+  { name: 'testimonial-2.svg', width: 300, height: 300, text: 'Testimonio 2', bg: '#6b7280' },
+  { name: 'testimonial-3.svg', width: 300, height: 300, text: 'Testimonio 3', bg: '#6b7280' },
+  { name: 'news-1.svg', width: 400, height: 250, text: 'Noticia 1', bg: '#dc2626' },
+  { name: 'news-2.svg', width: 400, height: 250, text: 'Noticia 2', bg: '#dc2626' },
+  { name: 'news-3.svg', width: 400, height: 250, text: 'Noticia 3', bg: '#dc2626' },
+  { name: 'qr-donation.svg', width: 200, height: 200, text: 'QR Donación', bg: '#000000' }
 ];
 
-// Crear directorio si no existe
 const imagesDir = path.join(__dirname, 'public', 'images');
 if (!fs.existsSync(imagesDir)) {
   fs.mkdirSync(imagesDir, { recursive: true });
@@ -38,13 +36,10 @@ if (!fs.existsSync(imagesDir)) {
 
 // Generar imágenes SVG
 images.forEach(img => {
-  const svg = generateSVGPlaceholder(img.width, img.height, img.text, img.bg, img.color);
-  const filePath = path.join(imagesDir, img.name.replace('.jpg', '.svg').replace('.png', '.svg'));
+  const svg = generateSVGPlaceholder(img.width, img.height, img.text, img.bg, '#ffffff');
+  const filePath = path.join(imagesDir, img.name);
   fs.writeFileSync(filePath, svg);
-  console.log(`✓ Creada: ${img.name} -> ${path.basename(filePath)}`);
+  console.log(`✓ Creada: ${img.name}`);
 });
 
-console.log('\n🎉 Todas las imágenes placeholder han sido creadas como SVG');
-console.log('📁 Ubicación: public/images/');
-console.log('💡 Estas son imágenes temporales para desarrollo');
-console.log('🔄 Reemplázalas con imágenes reales cuando estén disponibles');
+console.log('\n🎉 Imágenes placeholder actualizadas');
